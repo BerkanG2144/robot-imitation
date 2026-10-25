@@ -1,2 +1,4 @@
 gymnasium[mujoco]
 numpy
+torch
+stable-baselines3
