@@ -40,10 +40,10 @@ if __name__ == "__main__":
     env = gym.make("Reacher-v5")
     env.action_space.seed(0)
     policy = lambda obs: env.action_space.sample()
-    mean, half, returns = evaluate(policy, env, range(5))
+    mean, half, returns = evaluate(policy, env, range(20))
     print(f"ZufallsPolitik: {mean:.2f} ± {half:.2f}")
 
     model = SAC.load("models/sac_Reacher-v5_seed0")
     expert_policy = lambda obs: model.predict(obs, deterministic=True)[0]
-    mean, half, returns = evaluate(expert_policy, env, range(5))
+    mean, half, returns = evaluate(expert_policy, env, range(20))
     print(f"Experte: {mean:.2f} ± {half:.2f}")
