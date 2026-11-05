@@ -13,11 +13,13 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=0)
     args = parser.parse_args()
 
+    #RL with SAC Algorithm
     env = gym.make(args.env)
     model = SAC("MlpPolicy", env, seed=args.seed, device="cpu", verbose=0)
 
     print(f"Trainiere SAC auf {args.env} für {args.steps} Schritte (Seed {args.seed}) ...")
     start = time.time()
+    #learning process
     model.learn(total_timesteps=args.steps)
     minutes = (time.time() - start) / 60
     print(f"Fertig in {minutes:.1f} Minuten.")

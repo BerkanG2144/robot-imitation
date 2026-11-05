@@ -1,13 +1,3 @@
-"""Roboterarm in einem Fenster ansehen.
-
-Ohne --model führt der Arm zufällige Aktionen aus. Mit --model spielt ein
-trainierter SAC-Experte (siehe train_expert.py).
-
-Aufrufbeispiele (im Projektordner, mit aktiviertem venv):
-    python watch.py
-    python watch.py --model models/sac_Reacher-v5_seed0
-"""
-
 import argparse
 
 import gymnasium as gym
