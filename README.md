@@ -18,8 +18,9 @@ interval (t-distribution). Higher (closer to 0) is better.
 | Random actions | −43.93 ± 2.19 | 20 |
 | Expert (SAC, 200k steps, training seed 0) | −3.41 ± 0.66 | 20 |
 
-These two values are the lower and upper reference for the imitation learners. The expert is a single
-training run; it serves as the teacher, not as a claim about SAC in general.
+These values serve as baselines for evaluating the imitation learners. They are not hard bounds: a
+learner could do worse than random or better than the expert. The expert is a single training run; it
+serves as the teacher, not as a claim about SAC in general.
 
 ## Roadmap
 
@@ -61,7 +62,11 @@ python evaluate.py                                                  # random vs.
 
 Trained models are not part of the repository (`models/` is git-ignored).
 
+The results above were produced with Python 3.12 and the pinned versions in `requirements.txt`
+(Linux, CPU). Fixed seeds make runs repeatable on the same setup; other library versions or hardware
+can give slightly different numbers.
+
 ## Notes
 
 The expert uses SAC from Stable-Baselines3. Setup, expert training and viewer scripts were written with
-AI assistance; the evaluation and the imitation learning methods are implemented by me.
+AI assistance. I implemented the evaluation; the imitation learning methods will also be implemented by me.

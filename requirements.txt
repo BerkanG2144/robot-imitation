@@ -1,5 +1,7 @@
-gymnasium[mujoco]
-numpy
-scipy
-torch
-stable-baselines3
+# Tested with Python 3.12 on Linux (CPU only)
+gymnasium[mujoco]==1.4.0
+mujoco==3.17.0
+numpy==2.5.4
+scipy==1.18.1
+torch==2.14.1
+stable-baselines3==2.9.0
