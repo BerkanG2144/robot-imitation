@@ -37,16 +37,6 @@ All BC variants beat random actions but stay below the expert. The 5-episode res
 1-episode result, which I cannot explain with a single run per row. Multiple training seeds, input
 normalization and longer training are the next checks.
 
-## Roadmap
-
-- [x] Setup: Gymnasium + MuJoCo, CPU only
-- [x] Expert: SAC (Stable-Baselines3) on `Pendulum-v1` and `Reacher-v5`
-- [x] Evaluation: fixed seeds, mean return, 95 % CI (`evaluate.py`)
-- [ ] Behavior Cloning: first version runs (see above); re-implementation, normalization and multiple training seeds pending
-- [ ] DAgger: student rolls out, expert labels visited states, data aggregation
-- [ ] Active DAgger: ensemble disagreement decides when to query the expert, performance vs. number of queries
-- [ ] Experiments: all methods over ≥ 5 training seeds with confidence intervals
-
 ## Files
 
 | File | Purpose |
